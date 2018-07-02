@@ -9,10 +9,15 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="400" />
-            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
         <Button Background="Green"
                 Width="200"
@@ -24,13 +29,14 @@
                 Width="300"
                 Height="100"
                 Grid.Column="1"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
                 >Hello World 2</Button>
 
         <Button Background="Red"
                 Width="300"
                 Height="100"
-                Grid.Column="2"
-                >Hello World 2</Button>
+                Grid.Column="2">Hello World 2</Button>
 
     </Grid>
 </Window>

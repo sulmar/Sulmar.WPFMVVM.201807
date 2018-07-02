@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CDB52762-D638-4201-A2F7-D970F68530FC}</ProjectGuid>
+    <ProjectGuid>{C8738C77-562B-40A4-8846-A6EE9A90A617}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Sulmar.WPFMVVM.Panels</RootNamespace>
-    <AssemblyName>Sulmar.WPFMVVM.Panels</AssemblyName>
+    <RootNamespace>Sulmar.WPFMVVM.Shop.WPFClient</RootNamespace>
+    <AssemblyName>Sulmar.WPFMVVM.Shop.WPFClient</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -58,29 +58,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CanvasView.xaml.cs">
-      <DependentUpon>CanvasView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DockPanelView.xaml.cs">
-      <DependentUpon>DockPanelView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SampleView.xaml.cs">
-      <DependentUpon>SampleView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="StackPanelView.xaml.cs">
-      <DependentUpon>StackPanelView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UniformGridView.xaml.cs">
-      <DependentUpon>UniformGridView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WrapPanelView.xaml.cs">
-      <DependentUpon>WrapPanelView.xaml</DependentUpon>
+    <Compile Include="Views\CustomerView.xaml.cs">
+      <DependentUpon>CustomerView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GridView.xaml.cs">
-      <DependentUpon>GridView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -107,39 +89,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="CanvasView.xaml">
+    <Page Include="Views\CustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DockPanelView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GridView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SampleView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="StackPanelView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Content Include="Styles.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Page Include="UniformGridView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WrapPanelView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sulmar.WPFMVVM.Shop.Models\Sulmar.WPFMVVM.Shop.Models.csproj">
+      <Project>{9ebdacb1-c89b-4f12-b802-d35cf945a341}</Project>
+      <Name>Sulmar.WPFMVVM.Shop.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sulmar.WPFMVVM.Shop.ViewModels\Sulmar.WPFMVVM.Shop.ViewModels.csproj">
+      <Project>{5f24633d-f401-4bd1-841a-cec797473a58}</Project>
+      <Name>Sulmar.WPFMVVM.Shop.ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

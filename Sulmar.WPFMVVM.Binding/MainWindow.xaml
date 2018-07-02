@@ -1,0 +1,51 @@
+﻿<Window x:Class="Sulmar.WPFMVVM.Binding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sulmar.WPFMVVM.Binding"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+
+        <StackPanel>
+
+            <TextBox Text="{Binding Path=FirstName}" />
+            <TextBox Text="{Binding LastName}" />
+
+
+            <Label>
+                <Label.Content>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="FirstName" />
+                                <Binding Path="LastName" />
+                            </MultiBinding>
+                        </TextBlock.Text>    
+                    </TextBlock>
+                    
+                </Label.Content>
+            </Label>
+
+            <Slider Value="{Binding Path=Age}" Minimum="0" Maximum="100" />
+
+            <TextBox Text="{Binding ElementName=slider1, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                     Margin="20"
+                     Background="{Binding ElementName=slider1, Path=Background}"
+                     />
+
+            <Slider Value="60"
+                    Minimum="0"
+                    Maximum="100"
+                    Margin="20"
+                    x:Name="slider1"
+                    TickFrequency="1"
+                    IsSnapToTickEnabled="True"
+                    Background="White"
+                    />
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,48 @@
+﻿<Window x:Class="Sulmar.WPFMVVM.Panels.SampleView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        xmlns:local="clr-namespace:Sulmar.WPFMVVM.Panels"
+        mc:Ignorable="d"
+        Title="SampleView" Height="450" Width="800">
+
+
+    
+    <Grid>
+
+        <DockPanel Margin="10">
+
+            <!-- Header -->
+            <DockPanel DockPanel.Dock="Top" >
+
+            <!-- Logo -->
+             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                    <Button>LOGO</Button>
+                </StackPanel>
+
+            <!-- Buttons -->
+            <WrapPanel>
+                <Button>Add</Button>
+                <Button>Remove</Button>
+                <Button>Update</Button>
+                
+                <!--<Button Background="{StaticResource BackgroundButtonBrush}" 
+                        Foreground="{StaticResource ForegroundButtonBrush}"
+                        Width="{StaticResource ButtonWidth}" 
+                        Height="{StaticResource ButtonHeight}" 
+                        Margin="5">Update</Button>-->
+            </WrapPanel>
+
+                
+                
+            </DockPanel>
+            
+            
+            <Border  />
+
+        </DockPanel>
+        
+    </Grid>
+</Window>
