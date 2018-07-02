@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPFMVVM.HelloWorld", "Sulmar.WPFMVVM.HelloWorld\Sulmar.WPFMVVM.HelloWorld.csproj", "{5D879B00-45EE-4F1A-A691-1F1670056752}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPFMVVM.Panels", "Sulmar.WPFMVVM.Panels\Sulmar.WPFMVVM.Panels.csproj", "{CDB52762-D638-4201-A2F7-D970F68530FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5D879B00-45EE-4F1A-A691-1F1670056752}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D879B00-45EE-4F1A-A691-1F1670056752}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D879B00-45EE-4F1A-A691-1F1670056752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDB52762-D638-4201-A2F7-D970F68530FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDB52762-D638-4201-A2F7-D970F68530FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDB52762-D638-4201-A2F7-D970F68530FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDB52762-D638-4201-A2F7-D970F68530FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

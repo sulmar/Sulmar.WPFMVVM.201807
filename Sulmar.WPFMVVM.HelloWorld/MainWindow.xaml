@@ -7,6 +7,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+
+        <!--<Button Width="200"
+                Height="100"
+                Content="Hello World" />-->
+
+        <Button Width="200"
+                Height="100">
+
+            <StackPanel>
+                <CheckBox>Opcja 1</CheckBox>
+                <CheckBox>Opcja 2</CheckBox>
+            </StackPanel>
+        </Button>
+
+
+        <!--<Button Width="200"
+                Height="100">
+            <Button.Content>
+                Hello World
+            </Button.Content>
+        </Button>-->
         
+        
+
     </Grid>
 </Window>
