@@ -70,6 +70,9 @@
     <Compile Include="StackPanelView.xaml.cs">
       <DependentUpon>StackPanelView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TransformView.xaml.cs">
+      <DependentUpon>TransformView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UniformGridView.xaml.cs">
       <DependentUpon>UniformGridView.xaml</DependentUpon>
     </Compile>
@@ -132,6 +135,10 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Page Include="TransformView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UniformGridView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

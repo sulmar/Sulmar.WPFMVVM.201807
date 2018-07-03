@@ -4,9 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sulmar.WPFMVVM.Shop.WPFClient.Views"
+        xmlns:vm="clr-namespace:Sulmar.WPFMVVM.Shop.ViewModels;assembly=Sulmar.WPFMVVM.Shop.ViewModels"
+        xmlns:c="clr-namespace:Sulmar.WPFMVVM.Shop.WPFClient.Converters"
         mc:Ignorable="d"
         Title="CustomerView" Height="450" Width="800">
+
+    <Window.DataContext>
+        <vm:CustomerViewModel />
+    </Window.DataContext>
+
+    <!--<Window.Resources>
+        <c:SexToBrushConverter x:Key="SexToBrushConverter" />
+    </Window.Resources>-->
+
+
     <Grid>
+
+        <!--<StackPanel Background="{Binding Customer.Sex, Converter={StaticResource SexToBrushConverter}}">-->
+            
+         <StackPanel 
+             Background="{Binding Customer.Sex, Converter={c:SexToBrushConverter}}">
+            <TextBox Text="{Binding Customer.FirstName}" />
+            <TextBox Text="{Binding Customer.LastName}" Visibility="Collapsed" />
+            <TextBox Text="{Binding Customer.Sex}" />
+            <DatePicker SelectedDate="{Binding Customer.Birthday}" />
+        </StackPanel>
         
     </Grid>
+    
 </Window>

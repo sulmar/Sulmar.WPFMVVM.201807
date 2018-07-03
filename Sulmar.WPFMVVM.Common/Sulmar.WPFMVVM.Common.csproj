@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5F24633D-F401-4BD1-841A-CEC797473A58}</ProjectGuid>
+    <ProjectGuid>{9C505B9B-DC39-4162-9E5E-3B88E768CB6F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sulmar.WPFMVVM.Shop.ViewModels</RootNamespace>
-    <AssemblyName>Sulmar.WPFMVVM.Shop.ViewModels</AssemblyName>
+    <RootNamespace>Sulmar.WPFMVVM.Common</RootNamespace>
+    <AssemblyName>Sulmar.WPFMVVM.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,28 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseViewModel.cs" />
-    <Compile Include="CustomersViewModel.cs" />
-    <Compile Include="CustomerViewModel.cs" />
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Sulmar.WPFMVVM.Common\Sulmar.WPFMVVM.Common.csproj">
-      <Project>{9C505B9B-DC39-4162-9E5E-3B88E768CB6F}</Project>
-      <Name>Sulmar.WPFMVVM.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sulmar.WPFMVVM.Shop.IServices\Sulmar.WPFMVVM.Shop.IServices.csproj">
-      <Project>{50072842-4DFB-4135-A8AD-3EA9256198C2}</Project>
-      <Name>Sulmar.WPFMVVM.Shop.IServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sulmar.WPFMVVM.Shop.MockServices\Sulmar.WPFMVVM.Shop.MockServices.csproj">
-      <Project>{1A096000-54AB-4B99-A09D-F4CE428379ED}</Project>
-      <Name>Sulmar.WPFMVVM.Shop.MockServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sulmar.WPFMVVM.Shop.Models\Sulmar.WPFMVVM.Shop.Models.csproj">
-      <Project>{9ebdacb1-c89b-4f12-b802-d35cf945a341}</Project>
-      <Name>Sulmar.WPFMVVM.Shop.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

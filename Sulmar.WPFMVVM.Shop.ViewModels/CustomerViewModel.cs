@@ -1,4 +1,5 @@
 ﻿using Sulmar.WPFMVVM.Shop.IServices;
+using Sulmar.WPFMVVM.Shop.MockServices;
 using Sulmar.WPFMVVM.Shop.Models;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,23 @@ namespace Sulmar.WPFMVVM.Shop.ViewModels
 
         private readonly ICustomersService customersService;
 
+        public CustomerViewModel()
+            : this(new MockCustomersService())
+        {
+
+        }
+
         public CustomerViewModel(ICustomersService customersService)
         {
             this.customersService = customersService;
+
+            Load();
+        }
+
+
+        public void Load()
+        {
+            Customer = customersService.Get(3);
         }
     }
 }
