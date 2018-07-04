@@ -8,7 +8,7 @@
             <Label Content="{Binding FirstName}" Style="{StaticResource LabelStyle}" />
             <Label Content="{Binding LastName}" Style="{StaticResource LabelStyle}" />
             <DatePicker SelectedDate="{Binding Birthday}" />
-            <!--<Button Command="{Binding DataContext.RemoveCommand, RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}">Remove</Button>-->
+            <Button Command="{Binding DataContext.RemoveCommand, RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}">Remove</Button>
 
             <Button
                 Style="{StaticResource RemoveButtonStyle}"
@@ -21,6 +21,13 @@
         <StackPanel Orientation="Horizontal">
             <Label Content="{Binding FirstName}" Style="{StaticResource LabelStyle}" />
             <Label Content="{Binding LastName}" Style="{StaticResource LabelStyle}"/>
+        </StackPanel>
+    </DataTemplate>
+
+
+    <DataTemplate x:Key="HeaderCustomerTemplate" DataType="{x:Type m:Customer}">
+        <StackPanel Orientation="Horizontal">
+            <Label Content="{Binding FullName}" />
         </StackPanel>
     </DataTemplate>
 

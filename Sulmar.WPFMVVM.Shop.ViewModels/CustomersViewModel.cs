@@ -59,25 +59,48 @@ namespace Sulmar.WPFMVVM.Shop.ViewModels
 
         }
 
+        #endregion
 
 
+        #region 
+
+        private ICommand _UpdateCommand;
+        public ICommand UpdateCommand
+        {
+            get
+            {
+                if (_UpdateCommand == null)
+                {
+                    _UpdateCommand = new RelayCommand(p => Update(), p => CanUpdate);
+                }
+
+                return _UpdateCommand;
+            }
+        }
+
+        public void Update()
+        {
+            SelectedCustomer.FirstName = "XXXXXXX";
+        }
+
+        public bool CanUpdate => IsSelectedCustomer;
 
         #endregion
 
 
         #region SendCommand
 
-        private ICommand sendCommand;
+        private ICommand _SendCommand;
         public ICommand SendCommand
         {
             get
             {
-                if (sendCommand == null)
+                if (_SendCommand == null)
                 {
-                    sendCommand = new RelayCommand(p => Send(), p => CanSend());
+                    _SendCommand = new RelayCommand(p => Send(), p => CanSend());
                 }
 
-                return sendCommand;
+                return _SendCommand;
             }
         }
 

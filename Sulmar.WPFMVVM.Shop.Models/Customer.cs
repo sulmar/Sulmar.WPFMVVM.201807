@@ -8,9 +8,39 @@ namespace Sulmar.WPFMVVM.Shop.Models
 {
     public class Customer : Base
     {
+        //private string _firstName;
+        //private string _lastName;
+
         public int Id { get; set; }
+        //public string FirstName
+        //{
+        //    get => _firstName;
+        //    set
+        //    {
+        //        _firstName = value;
+
+        //        OnPropertyChanged();
+        //        OnPropertyChanged(nameof(FullName));
+        //    }
+        //}
+
+        //public string LastName
+        //{
+        //    get => _lastName;
+        //    set
+        //    {
+        //        _lastName = value;
+
+        //        OnPropertyChanged();
+        //        OnPropertyChanged(nameof(FullName));
+        //    }
+        //}
+
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string FullName => $"{FirstName} {LastName}";
+
         public DateTime Birthday { get; set; }
         public Sex Sex { get; set; }
         public string EMail { get; set; }

@@ -35,9 +35,29 @@
             <!-- Buttons -->
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <Button Command="{Binding SendCommand}">Send</Button>
-                <Button>View</Button>
+                <Button Command="{Binding UpdateCommand}">Update</Button>
                 
             </StackPanel>
+
+            <!-- TabControl -->
+
+            <TabControl DockPanel.Dock="Top" Height="200"
+                        ItemsSource="{Binding Customers}"
+                        SelectedItem="{Binding SelectedCustomer}"
+                        Margin="20"
+                        ContentTemplate="{StaticResource CustomerTemplate}"
+                        >
+
+                <TabControl.ItemContainerStyle>
+                    <Style TargetType="TabItem">
+                        <!--<Setter Property="Header" Value="{Binding FirstName}" />-->
+                        <Setter Property="HeaderTemplate" Value="{StaticResource HeaderCustomerTemplate}" />
+                    </Style>
+                </TabControl.ItemContainerStyle>
+
+
+            </TabControl>
+            
 
             <!-- Content -->
 
@@ -70,6 +90,8 @@
                 </StackPanel>
 
             </Grid>
+
+
 
 
         </DockPanel>

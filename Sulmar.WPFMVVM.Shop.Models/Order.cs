@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Sulmar.WPFMVVM.Shop.Models
 {
@@ -10,5 +11,23 @@ namespace Sulmar.WPFMVVM.Shop.Models
         public DateTime CreateDate { get; set; }
         public Customer Customer { get; set; }
         public ICollection<OrderDetail> Details { get; set; }
+
+        public decimal Total => Details.Sum(d => d.TotalAmount);
+
+        public Order()
+        {
+            foreach (var detail in Details)
+            {
+                detail.PropertyChanged += Detail_PropertyChanged;
+            }
+        }
+
+        private void Detail_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "TotalAmount")
+            {
+                OnPropertyChanged(nameof(Total));
+            }
+        }
     }
 }
