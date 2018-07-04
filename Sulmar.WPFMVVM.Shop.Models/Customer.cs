@@ -8,10 +8,12 @@ namespace Sulmar.WPFMVVM.Shop.Models
 {
     public class Customer : Base
     {
+        public int Id { get; set; }
+
         //private string _firstName;
         //private string _lastName;
 
-        public int Id { get; set; }
+
         //public string FirstName
         //{
         //    get => _firstName;
