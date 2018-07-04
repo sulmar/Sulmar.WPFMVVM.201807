@@ -12,21 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Sulmar.WPFMVVM.Panels
+namespace Sulmar.WPFMVVM.Shop.WPFClient.Views
 {
     /// <summary>
-    /// Interaction logic for UniformGridView.xaml
+    /// Interaction logic for ShellView.xaml
     /// </summary>
-    public partial class UniformGridView : Window
+    public partial class ShellView : Window
     {
-        public UniformGridView()
+        public ShellView()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            e.Handled = true;
         }
     }
 }

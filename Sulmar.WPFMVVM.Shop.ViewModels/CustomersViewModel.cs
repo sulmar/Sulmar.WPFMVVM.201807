@@ -25,6 +25,8 @@ namespace Sulmar.WPFMVVM.Shop.ViewModels
 
         }
 
+
+
         public CustomersViewModel(ICustomersService customersService)
         {
             this.customersService = customersService;

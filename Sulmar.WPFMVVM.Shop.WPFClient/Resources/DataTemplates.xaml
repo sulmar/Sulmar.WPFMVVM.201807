@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:m="clr-namespace:Sulmar.WPFMVVM.Shop.Models;assembly=Sulmar.WPFMVVM.Shop.Models"
+                 
                     xmlns:local="clr-namespace:Sulmar.WPFMVVM.Shop.WPFClient.Resources">
     
     <DataTemplate DataType="{x:Type m:Customer}">
@@ -30,5 +31,9 @@
             <Label Content="{Binding FullName}" />
         </StackPanel>
     </DataTemplate>
+
+
+   
+    
 
 </ResourceDictionary>

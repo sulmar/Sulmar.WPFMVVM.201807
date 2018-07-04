@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace Sulmar.WPFMVVM.Shop.Models
 {
+    // Install-Package PropertyChanged.Fody
+    // Add xml file FodyWeavers.xaml
 
     public abstract class Base : INotifyPropertyChanged
     {

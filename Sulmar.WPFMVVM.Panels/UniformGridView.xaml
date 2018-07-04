@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:Sulmar.WPFMVVM.Panels"
         mc:Ignorable="d"
         Title="UniformGridView" Height="450" Width="800">
-    <UniformGrid Columns="3">
 
 
+
+    <UniformGrid Columns="3" ButtonBase.Click="Button_Click">
         <Button Height="100">1</Button>
         <Button Height="100">2</Button>
         <Button Height="100">3</Button>

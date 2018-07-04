@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:Sulmar.WPFMVVM.Shop.ViewModels;assembly=Sulmar.WPFMVVM.Shop.ViewModels"
+                    xmlns:v="clr-namespace:Sulmar.WPFMVVM.Shop.WPFClient.Views"
+                    xmlns:local="clr-namespace:Sulmar.WPFMVVM.Shop.WPFClient.Resources">
+
+    <DataTemplate DataType="{x:Type vm:CustomersViewModel}">
+        <v:Customers2View />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:ProductsViewModel}">
+        <v:ProductsView />
+    </DataTemplate>
+    
+</ResourceDictionary>

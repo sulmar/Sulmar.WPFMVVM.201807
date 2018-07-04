@@ -10,23 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sulmar.WPFMVVM.Panels
+namespace Sulmar.WPFMVVM.Shop.WPFClient.Views
 {
     /// <summary>
-    /// Interaction logic for UniformGridView.xaml
+    /// Interaction logic for Customers2View.xaml
     /// </summary>
-    public partial class UniformGridView : Window
+    public partial class Customers2View : UserControl
     {
-        public UniformGridView()
+        public Customers2View()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            e.Handled = true;
         }
     }
 }
