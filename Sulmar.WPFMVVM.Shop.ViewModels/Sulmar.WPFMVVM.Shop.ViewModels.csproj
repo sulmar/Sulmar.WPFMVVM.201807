@@ -48,6 +48,7 @@
     <Compile Include="BaseViewModel.cs" />
     <Compile Include="CustomersViewModel.cs" />
     <Compile Include="CustomerViewModel.cs" />
+    <Compile Include="OrdersViewModel.cs" />
     <Compile Include="ProductsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShellViewModel.cs" />

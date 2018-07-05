@@ -17,6 +17,8 @@
     <Grid>
 
         <DockPanel>
+
+            <Slider Name="slider1" Minimum="0" Value="100" Maximum="500" DockPanel.Dock="Top"/>
             
             <!-- Header -->
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
@@ -25,13 +27,18 @@
                 <Button Command="{Binding ShowEntitiesCommmand}" 
                         CommandParameter="Products">Products</Button>
 
-                <Button Content="Orders">
+                
+
+                <Button Content="Orders"
+                        Command="{Binding ShowEntitiesCommmand}"
+                        CommandParameter="Orders"
+                        >
                     <i:Interaction.Behaviors>
-                        <b:ButtonBehavior />
+                        <b:ButtonBehavior Width="{Binding ElementName=slider1, Path=Value}"  />
                     </i:Interaction.Behaviors>
 
                     <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="MouseLeave">
+                        <i:EventTrigger EventName="MouseRightButtonDown">
                             <i:InvokeCommandAction Command="{Binding ShowEntitiesCommmand}"
                                                    CommandParameter="Products"
                                                    />
@@ -88,6 +95,29 @@
             <ContentControl Content="{Binding SelectedViewModel}" />
 
         </DockPanel>
+        
+        
+
+        <Border Width="200"
+                Height="50"
+                Opacity="0.8"
+                Background="Yellow"
+                Visibility="Hidden"
+                >
+
+            <Grid>
+            <ProgressBar Value="50"
+                        IsIndeterminate="True"
+                         />
+
+                <Label HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       >Loading data</Label>
+
+            </Grid>
+
+        </Border>
+        
         
     </Grid>
 </Window>

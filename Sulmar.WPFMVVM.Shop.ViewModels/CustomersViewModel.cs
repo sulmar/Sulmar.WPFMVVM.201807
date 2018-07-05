@@ -37,6 +37,9 @@ namespace Sulmar.WPFMVVM.Shop.ViewModels
         public void Load()
         {
             Customers = customersService.Get();
+
+
+            SelectedCustomer = Customers.First();
         }
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interactivity;
 
@@ -10,6 +11,23 @@ namespace Sulmar.WPFMVVM.Shop.WPFClient.Behaviors
 {
     public class ButtonBehavior : Behavior<Button>
     {
+
+
+
+        public double Width
+        {
+            get { return (double)GetValue(WidthProperty); }
+            set { SetValue(WidthProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Width.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty WidthProperty =
+            DependencyProperty.Register("Width", typeof(double), typeof(ButtonBehavior), new PropertyMetadata(100d));
+
+
+
+        // public double Width { get; set; }
+
         protected override void OnAttached()
         {
             Button button = this.AssociatedObject;
@@ -21,7 +39,7 @@ namespace Sulmar.WPFMVVM.Shop.WPFClient.Behaviors
 
         private void Button_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            AssociatedObject.Width = 200;
+            AssociatedObject.Width = this.Width;
         }
     }
 }
