@@ -1,9 +1,8 @@
 ﻿using FluentValidation;
 using FluentValidation.Attributes;
-using FluentValidation.Internal;
 using FluentValidation.Results;
 using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -15,40 +14,41 @@ namespace Sulmar.WPFMVVM.Shop.Models
     // Install-Package PropertyChanged.Fody
     // Add xml file FodyWeavers.xaml
 
-    public abstract class Base : INotifyPropertyChanged, IDataErrorInfo
+    public abstract class Base : INotifyPropertyChanged, INotifyDataErrorInfo
     {
         private IValidator validator => new AttributedValidatorFactory().GetValidator(this.GetType());
 
-        public string this[string columnName] => Validate(columnName);
+        #region IDataErrorInfo
 
+        //public string this[string columnName] => Validate(columnName);
 
-        private string Validate(string propertyName)
-        {
-            if (validator == null)
-                return null;
+        //private string Validate(string propertyName)
+        //{
+        //    if (validator == null)
+        //        return null;
 
-            var properties = new List<string> { propertyName };
+        //    var result = validator.Validate(this, propertyName);
 
-            var context = new ValidationContext(this, new PropertyChain(), new MemberNameValidatorSelector(properties));
+        //    if (result.IsValid)
+        //    {
+        //        return null;
+        //    }
+        //    else
+        //    {
+        //        return GetString(result);
+        //    }
+        //}
 
-            var result = validator.Validate(context);
+        //private static string GetString(ValidationResult result)
+        //{
+        //    return string.Join(Environment.NewLine, result.Errors.Select(x => x.ErrorMessage));
+        //}
 
-            if (result.IsValid)
-            {
-                return null;
-            }
-            else
-            {
-                return GetString(result);
-            }
-        }
+        //public string Error => validator == null ? null : GetString(validator.Validate(this));
 
-        private static string GetString(ValidationResult result)
-        {
-            return string.Join(Environment.NewLine, result.Errors.Select(x => x.ErrorMessage));
-        }
+        #endregion
 
-        public string Error => validator == null ? null : GetString(validator.Validate(this));
+        #region INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -56,5 +56,23 @@ namespace Sulmar.WPFMVVM.Shop.Models
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        #endregion
+
+
+        #region INotifyDataErrorInfo
+
+        public bool HasErrors => !validator.Validate(this).IsValid;
+
+        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
+        public IEnumerable GetErrors(string propertyName)
+        {
+            var result = validator.Validate(this, propertyName);
+
+            return result.Errors;
+        }
+
+        #endregion
     }
 }
