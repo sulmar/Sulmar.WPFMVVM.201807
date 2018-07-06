@@ -17,7 +17,7 @@ namespace Sulmar.WPFMVVM.Shop.WPFClient.Views
     /// <summary>
     /// Interaction logic for CustomerView.xaml
     /// </summary>
-    public partial class CustomerView : Window
+    public partial class CustomerView : UserControl
     {
         public CustomerView()
         {

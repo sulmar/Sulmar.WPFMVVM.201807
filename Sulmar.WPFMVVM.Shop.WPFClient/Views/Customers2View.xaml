@@ -4,10 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:Sulmar.WPFMVVM.Shop.ViewModels;assembly=Sulmar.WPFMVVM.Shop.ViewModels"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:local="clr-namespace:Sulmar.WPFMVVM.Shop.WPFClient.Views"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance {x:Type vm:CustomersViewModel}}"
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    
+    
     <Grid>
 
         <DockPanel>
@@ -19,6 +28,13 @@
             </StackPanel>
 
 
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" 
+                        HorizontalAlignment="Center" >
+                <Button Command="{Binding UpdateCommand}">Update</Button>
+                <Button Command="{Binding RemoveCommand}">Remove</Button>
+            </StackPanel>
+            
+
             <StackPanel DataContext="{Binding SelectedCustomer}">
                 <Label Content="Imię"/>
                 <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
@@ -28,8 +44,14 @@
 
                 <Label Content="Email"/>
                 <TextBox Text="{Binding EMail, UpdateSourceTrigger=PropertyChanged}" />
+
+
+               
             </StackPanel>
-            
+
+
+           
+
         </DockPanel>
             
     </Grid>

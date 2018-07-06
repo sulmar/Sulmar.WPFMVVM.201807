@@ -1,4 +1,5 @@
 ﻿using Sulmar.WPFMVVM.Common;
+using Sulmar.WPFMVVM.Shop.DbServices;
 using Sulmar.WPFMVVM.Shop.IServices;
 using Sulmar.WPFMVVM.Shop.MockServices;
 using Sulmar.WPFMVVM.Shop.Models;
@@ -19,9 +20,16 @@ namespace Sulmar.WPFMVVM.Shop.ViewModels
 
         private readonly IOrdersService ordersService;
 
+        //public OrdersViewModel()
+        //    : this(new MockOrdersService(new MockCustomersService(), new MockProductsService()))
+        //{
+        //}
+
+
         public OrdersViewModel()
-            : this(new MockOrdersService(new MockCustomersService(), new MockProductsService()))
+            : this(new DbOrdersService())
         {
+
         }
 
 

@@ -17,6 +17,11 @@ namespace Sulmar.WPFMVVM.Shop.MockServices
             new Customer { Id = 3, FirstName = "Kasia", LastName = "Sulecka", Birthday = DateTime.Parse("2000-05-01"), Sex = Sex.Female },
         };
 
+        public void Add(Customer customer)
+        {
+            customers.Add(customer);
+        }
+
         public Customer Get(int id)
         {
             return customers.SingleOrDefault(c => c.Id == id);
@@ -25,6 +30,21 @@ namespace Sulmar.WPFMVVM.Shop.MockServices
         public ICollection<Customer> Get()
         {
             return customers;
+        }
+
+        public Task<ICollection<Customer>> GetAsync()
+        {
+            return Task.Run(() => Get());
+        }
+
+        public void Remove(Customer customer)
+        {
+            customers.Remove(customer); 
+        }
+
+        public void Update(Customer customer)
+        {
+            throw new NotImplementedException();
         }
     }
 }

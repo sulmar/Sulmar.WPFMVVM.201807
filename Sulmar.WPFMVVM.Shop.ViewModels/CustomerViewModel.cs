@@ -1,4 +1,6 @@
-﻿using Sulmar.WPFMVVM.Shop.IServices;
+﻿using Sulmar.WPFMVVM.Common;
+using Sulmar.WPFMVVM.Shop.DbServices;
+using Sulmar.WPFMVVM.Shop.IServices;
 using Sulmar.WPFMVVM.Shop.MockServices;
 using Sulmar.WPFMVVM.Shop.Models;
 using System;
@@ -6,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Sulmar.WPFMVVM.Shop.ViewModels
 {
@@ -15,8 +18,15 @@ namespace Sulmar.WPFMVVM.Shop.ViewModels
 
         private readonly ICustomersService customersService;
 
+        //public CustomerViewModel()
+        //    : this(new MockCustomersService())
+        //{
+
+        //}
+
+
         public CustomerViewModel()
-            : this(new MockCustomersService())
+            : this(new DbCustomersService())
         {
 
         }
@@ -25,13 +35,23 @@ namespace Sulmar.WPFMVVM.Shop.ViewModels
         {
             this.customersService = customersService;
 
+            SaveCommand = new RelayCommand(p => Save());
+
             Load();
         }
 
 
         public void Load()
         {
-            Customer = customersService.Get(3);
+            Customer = new Customer();
+        }
+
+
+        public ICommand SaveCommand { get; set; }
+
+        public void Save()
+        {
+            customersService.Add(Customer);
         }
     }
 }

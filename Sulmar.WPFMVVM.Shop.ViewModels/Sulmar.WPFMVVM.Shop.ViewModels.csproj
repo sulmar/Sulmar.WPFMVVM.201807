@@ -59,6 +59,10 @@
       <Project>{9C505B9B-DC39-4162-9E5E-3B88E768CB6F}</Project>
       <Name>Sulmar.WPFMVVM.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Sulmar.WPFMVVM.Shop.DbServices\Sulmar.WPFMVVM.Shop.DbServices.csproj">
+      <Project>{408186A3-8125-412C-B599-1452B69795F4}</Project>
+      <Name>Sulmar.WPFMVVM.Shop.DbServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sulmar.WPFMVVM.Shop.IServices\Sulmar.WPFMVVM.Shop.IServices.csproj">
       <Project>{50072842-4DFB-4135-A8AD-3EA9256198C2}</Project>
       <Name>Sulmar.WPFMVVM.Shop.IServices</Name>

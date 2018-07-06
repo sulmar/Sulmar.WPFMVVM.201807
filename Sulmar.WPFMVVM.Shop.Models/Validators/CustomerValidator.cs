@@ -19,7 +19,7 @@ namespace Sulmar.WPFMVVM.Shop.Models.Validators
                 .NotEmpty();
 
             RuleFor(p => p.EMail)
-                .Must(s => s.Contains("@"));
+                .Must(s => !string.IsNullOrEmpty(s) && s.Contains("@"));
         }
     }
 }

@@ -9,6 +9,8 @@ namespace Sulmar.WPFMVVM.Shop.IServices
 {
     public interface IOrdersService
     {
+        void Add(Order order);
+
         ICollection<Order> Get();
         Order Get(int id);
 

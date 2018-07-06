@@ -21,7 +21,7 @@ namespace Sulmar.WPFMVVM.Shop.WPFClient.Converters
                 if (sex == Sex.Female)
                     return Brushes.Pink;
                 else
-                    return Brushes.Blue;
+                    return Brushes.Green;
             }
 
             return new NotSupportedException();

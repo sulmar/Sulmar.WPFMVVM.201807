@@ -77,6 +77,12 @@ namespace Sulmar.WPFMVVM.Shop.Models
         public bool IsAdult => Age >= 18;
 
 
+        public Customer()
+        {
+            Birthday = DateTime.Today;
+        }
+
+
         #region IDataErrorInfo
 
         //public string this[string columnName]

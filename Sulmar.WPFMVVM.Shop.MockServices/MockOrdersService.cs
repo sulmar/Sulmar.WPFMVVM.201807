@@ -59,6 +59,11 @@ namespace Sulmar.WPFMVVM.Shop.MockServices
 
         }
 
+        public void Add(Order order)
+        {
+            orders.Add(order);
+        }
+
         public ICollection<Order> Get()
         {
 
