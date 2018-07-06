@@ -23,7 +23,8 @@
             <!-- Header -->
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <Button Command="{Binding ShowEntitiesCommmand}" 
-                        CommandParameter="Customers">Customers</Button>
+                        CommandParameter="Customers"
+                        >Customers</Button>
                 <Button Command="{Binding ShowEntitiesCommmand}" 
                         CommandParameter="Products">Products</Button>
 

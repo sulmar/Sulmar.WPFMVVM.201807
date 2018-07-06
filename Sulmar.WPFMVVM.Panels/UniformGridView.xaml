@@ -7,19 +7,68 @@
         mc:Ignorable="d"
         Title="UniformGridView" Height="450" Width="800">
 
+    <Window.Resources>
+
+        <ControlTemplate x:Key="ButtonControlTemplate" TargetType="Button">
+            <Grid>
+                <Ellipse Fill="{TemplateBinding Background}" />
+                
+                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
+
+               
+            </Grid>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.5" />
+                </Trigger>
+
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </ControlTemplate.Triggers>
+
+        </ControlTemplate>
+        
+        <Style TargetType="Button">
+            <Setter Property="Template" Value="{StaticResource ButtonControlTemplate}" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="100" />
+            <Setter Property="Background" Value="Green" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        
+    </Window.Resources>
+
 
 
     <UniformGrid Columns="3" ButtonBase.Click="Button_Click">
-        <Button Height="100">1</Button>
-        <Button Height="100">2</Button>
-        <Button Height="100">3</Button>
-        <Button Height="100">4</Button>
-        <Button Height="100">5</Button>
-        <Button Height="100">6</Button>
-        <Button Height="100">7</Button>
-        <Button Height="100">8</Button>
-        <Button Height="100">9</Button>
-        <Button Height="100">0</Button>
+        <Button>
+            <Button.Content>
+                <StackPanel>
+                    <Label Foreground="White">HELLO rwerwerwer</Label>
+                    <Label Foreground="White">WORLD ererererere</Label>
+                </StackPanel>
+            </Button.Content>
+            
+        </Button>
+        
+        <Button>2</Button>
+        <Button>3</Button>
+        <Button>4</Button>
+        <Button>5</Button>
+        <Button>6</Button>
+        <Button>7</Button>
+        <Button>8</Button>
+        <Button>9</Button>
+        <Button>0</Button>
         
         
     </UniformGrid>

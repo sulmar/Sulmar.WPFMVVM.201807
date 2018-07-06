@@ -63,7 +63,7 @@ namespace Sulmar.WPFMVVM.Shop.Models
 
         #region INotifyDataErrorInfo
 
-        public bool HasErrors => !validator.Validate(this).IsValid;
+        public bool HasErrors => !(validator?.Validate(this).IsValid ?? true);
 
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 

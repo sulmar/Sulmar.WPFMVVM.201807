@@ -21,13 +21,13 @@
 
             <StackPanel DataContext="{Binding SelectedCustomer}">
                 <Label Content="Imię"/>
-                <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}" />
+                <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
 
                 <Label Content="Nazwisko"/>
-                <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}" />
+                <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" />
 
                 <Label Content="Email"/>
-                <TextBox Text="{Binding EMail, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}" />
+                <TextBox Text="{Binding EMail, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
             
         </DockPanel>
