@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using FluentValidation.Attributes;
 using FluentValidation.Results;
+using Sulmar.WPFMVVM.Shop.Models.Extensions;
 using System;
 using System.Collections;
 using System.ComponentModel;

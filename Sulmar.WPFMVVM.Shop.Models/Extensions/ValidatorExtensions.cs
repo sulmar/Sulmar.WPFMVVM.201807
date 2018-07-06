@@ -3,7 +3,7 @@ using FluentValidation.Internal;
 using FluentValidation.Results;
 using System.Collections.Generic;
 
-namespace Sulmar.WPFMVVM.Shop.Models
+namespace Sulmar.WPFMVVM.Shop.Models.Extensions
 {
     public static class ValidatorExtensions
     {
