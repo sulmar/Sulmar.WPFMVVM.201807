@@ -6,6 +6,12 @@ Przykłady ze szkolenia WPF MVVM + EF
 ## Biblioteki
 Fody https://github.com/Fody/PropertyChanged
 
+
+## Entity Framework - migracje
+* Enable-Migrations
+* Add-Migration 
+* Update-Database [-verbose]
+
 ## Projekty
 
 | Projekt  | Opis  |
